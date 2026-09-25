@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pathanzamin53-afk/Star-Catcher-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pathanzamin53-afk/Star-Catcher-Game/issues"
+  },
+  "homepage": "https://github.com/pathanzamin53-afk/Star-Catcher-Game#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
