@@ -671,3 +671,35 @@
   @media (min-width: 640px) {
     .game-logo { width: 200px; height: 200px; }
   }
+/* Navbar Alignment */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+/* Logo Styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.site-logo {
+  width: 40px; /* Zarurat ke hisab se width change karein */
+  height: 40px; /* Aspect ratio maintain rakhne ke liye height match karein */
+  object-fit: contain;
+  border-radius: 50%; /* Agar circular dikhana hai toh */
+  transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.05); /* Hover animation */
+}
+
+
+
+
+
