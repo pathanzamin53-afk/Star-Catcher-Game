@@ -1,57 +1,135 @@
-  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  * { 
+   margin:0; 
+   padding:0; 
+   box-sizing:border-box; 
+   -webkit-tap-highlight-color:transparent; 
+  }
   html, body {
-    height:100%; overflow:hidden; background:#0a0512;
+    height:100%; 
+   overflow:hidden; 
+   background:#0a0512;
     font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
-    display:flex; align-items:center; justify-content:center;
-    touch-action:manipulation; user-select:none;
-    -webkit-font-smoothing:antialiased;
+    display:flex; 
+   align-items:center; 
+   justify-content:center;
+    touch-action:manipulation; 
+   user-select:none;
+   -webkit-font-smoothing:antialiased;
     overscroll-behavior:none;
   }
   #gameWrap {
     position:relative;
-    width:100vw; height:100vh; height:100dvh;
-    overflow:hidden; background:#0a0512;
-    contain: strict;
+    width:100vw; 
+   height:100vh; 
+   height:100dvh;
+   overflow:hidden; 
+   background:#0a0512;
+   contain: strict;
   }
-  canvas { display:block; width:100%; height:100%; touch-action:none; }
+  canvas { 
+   display:block; 
+   width:100%; 
+   height:100%; 
+   touch-action:none; 
+  }
   @media (min-width: 640px) and (min-height: 640px) {
     #gameWrap {
-      width: min(500px, 92vw); height: min(900px, 94vh);
-      border-radius:36px;
-      border:1px solid rgba(255,110,180,.2);
-      box-shadow: 0 40px 100px rgba(0,0,0,.75), 0 0 0 1px rgba(255,110,180,.08) inset, 0 0 120px rgba(255,0,128,.2);
+     width: min(500px, 92vw); 
+     height: min(900px, 94vh);
+     border-radius:36px;
+     border:1px solid rgba(255,110,180,.2);
+     box-shadow: 0 40px 100px rgba(0,0,0,.75), 0 0 0 1px rgba(255,110,180,.08) inset, 0 0 120px rgba(255,0,128,.2);
     }
   }
   @media (min-width: 1200px) and (min-height: 800px) {
-    #gameWrap { width: min(560px, 60vw); height: min(950px, 94vh); }
+    #gameWrap { 
+     width: min(560px, 60vw); 
+     height: min(950px, 94vh); 
+    }
   }
 
   #hud {
-    position:absolute; top:0; left:0; right:0;
-    display:flex; justify-content:space-between; align-items:flex-start;
+    position:absolute; 
+   top:0; 
+   left:0; 
+   right:0;
+    display:flex; 
+   justify-content:space-between; 
+   align-items:flex-start;
     padding: max(14px, env(safe-area-inset-top)) 16px 0 max(16px, env(safe-area-inset-left));
-    pointer-events:none; z-index:5;
+    pointer-events:none; 
+   z-index:5;
   }
-  @media (min-width: 640px) { #hud { padding:20px 24px 0 24px; } }
+  @media (min-width: 640px) { 
+   #hud { 
+    padding:20px 24px 0 24px; 
+   } 
+  }
   .hud-item {
-    display:flex; flex-direction:column; gap:2px;
-    background: rgba(255,110,180,0.10);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255,180,220,0.18);
-    padding:8px 14px; border-radius:16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,200,230,0.28);
-    transition:transform .25s cubic-bezier(.34,1.56,.64,1);
+    display:flex; 
+   flex-direction:column; 
+   gap:2px;
+   background: rgba(255,110,180,0.10);
+   -webkit-backdrop-filter: blur(24px) saturate(180%);
+   backdrop-filter: blur(24px) saturate(180%);
+   border: 1px solid rgba(255,180,220,0.18);
+   padding:8px 14px; 
+   border-radius:16px;
+   box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,200,230,0.28);
+   transition:transform .25s cubic-bezier(.34,1.56,.64,1);
   }
-  @media (min-width: 640px) { .hud-item { padding:10px 16px; border-radius:18px; } }
-  .hud-item.pulse { animation: hudPulse .4s cubic-bezier(.34,1.56,.64,1); }
-  @keyframes hudPulse { 0% { transform:scale(1); } 50% { transform:scale(1.12); } 100% { transform:scale(1); } }
-  .hud-item:nth-child(2) { align-items:center; }
-  .hud-item:nth-child(3) { align-items:flex-end; }
-  .hud-label { font-size:9px; letter-spacing:2.2px; opacity:.65; font-weight:700; color:#ffd0e8; }
-  .hud-value { font-size:19px; font-variant-numeric:tabular-nums; line-height:1; color:#fff; font-weight:800; letter-spacing:-0.5px; text-shadow:0 1px 2px rgba(0,0,0,.4); white-space:nowrap; }
-  @media (min-width: 640px) { .hud-value { font-size:22px; } }
-  #lives { letter-spacing:3px; font-size:13px; }
+  @media (min-width: 640px) { 
+   .hud-item { 
+    padding:10px 16px; 
+    border-radius:18px; 
+   } 
+  }
+  .hud-item.pulse { 
+   animation: hudPulse .4s cubic-bezier(.34,1.56,.64,1); 
+  }
+  @keyframes hudPulse { 
+   0% { 
+    transform:scale(1); 
+   } 
+   50% {
+    transform:scale(1.12); 
+   } 
+   100% { 
+    transform:scale(1); 
+   } 
+  }
+  .hud-item:nth-child(2) { 
+   align-items:center; 
+  }
+  .hud-item:nth-child(3) { 
+   align-items:flex-end; 
+  }
+  .hud-label { 
+   font-size:9px; 
+   letter-spacing:2.2px; 
+   opacity:.65; 
+   font-weight:700; 
+   color:#ffd0e8; 
+  }
+  .hud-value { 
+   font-size:19px; 
+   font-variant-numeric:tabular-nums; 
+   line-height:1; 
+   color:#fff; 
+   font-weight:800; 
+   letter-spacing:-0.5px; 
+   text-shadow:0 1px 2px rgba(0,0,0,.4); 
+   white-space:nowrap; 
+  }
+  @media (min-width: 640px) { 
+   .hud-value { 
+    font-size:22px; 
+   } 
+  }
+  #lives { 
+   letter-spacing:3px; 
+   font-size:13px; 
+  }
 
   #comboBar {
     position:absolute; top: max(14px, env(safe-area-inset-top)); left:50%;
@@ -559,5 +637,37 @@
     opacity:0; pointer-events:none;
     transition:opacity .3s; z-index:40; text-transform:uppercase;
   }
-  #savedIndicator.show { opacity:1; }
-  @keyframes rainbowSlide { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+  #savedIndicator.show { 
+   opacity:1; 
+  }
+  @keyframes rainbowSlide { 
+   from { 
+    background-position: 0% 50%; 
+   } to { 
+    background-position: 200% 50%; 
+   } 
+  }
+/* ============ GAME LOGO ============ */
+  .game-logo {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 8px 28px rgba(255,180,50,.5));
+    animation: logoFloat 4s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+  }
+  @keyframes logoFloat {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      filter: drop-shadow(0 8px 28px rgba(255,180,50,.5));
+    }
+    50% {
+      transform: translateY(-6px) scale(1.03);
+      filter: drop-shadow(0 12px 36px rgba(255,180,50,.85));
+    }
+  }
+  @media (min-width: 640px) {
+    .game-logo { width: 200px; height: 200px; }
+  }
